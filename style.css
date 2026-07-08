@@ -719,3 +719,78 @@ button:hover{
     }
 
 }
+/*==============================
+        FINAL PAGE
+==============================*/
+
+#finalTitle{
+
+    font-size:58px;
+
+    color:#FFD86B;
+
+    margin-bottom:40px;
+
+    text-shadow:0 0 20px #d4af37;
+
+}
+
+#finalText{
+
+    font-size:28px;
+
+    line-height:2.5;
+
+    color:white;
+
+}
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:10px;
+
+    height:14px;
+
+    z-index:99999;
+
+    animation:confettiFall linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:translateY(-10vh) rotate(0deg);
+
+    }
+
+    to{
+
+        transform:translateY(120vh) rotate(720deg);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #finalTitle{
+
+        font-size:36px;
+
+    }
+
+    #finalText{
+
+        font-size:20px;
+
+        padding:20px;
+
+    }
+
+}
