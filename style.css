@@ -90,7 +90,7 @@ button{
 
     font-weight:bold;
 
-    opacity:0;
+    opacity:1;
 
 }
 
@@ -792,5 +792,13 @@ button:hover{
         padding:20px;
 
     }
+
+}
+#checkPassword{
+
+    opacity:1;
+    display:block;
+    width:100%;
+    margin-top:25px;
 
 }
