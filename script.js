@@ -172,7 +172,7 @@ setTimeout(()=>{
 
     else{
 
-        passwordError.innerHTML="Ø±Ù…Ø² Ø§Ø´ØªØ¨Ø§Ù‡Ù‡... ÛŒÙ‡ Ø®Ø§Ø·Ø±Ù‡ Ø¢Ø´Ù†Ø§ØªØ± Ø±Ùˆ Ø§Ù…ØªØ­Ø§Ù† Ú©Ù† ðŸ˜‰";
+        passwordError.innerHTML="نچ اشتباهه. خنگ نباش 😝";
 
     }
 
