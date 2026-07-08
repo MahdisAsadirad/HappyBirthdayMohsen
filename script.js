@@ -270,20 +270,25 @@ finishBtn.onclick=function(){
     setInterval(createHeart,350);
 
 }
+
 function createHeart(){
 
     const heart=document.createElement("div");
 
     heart.className="heart";
 
-   heart.innerHTML = Math.random() > 0.5 ? "&#10084;" : "&#128155;";
-   heart.innerHTML = Math.random() > 0.5 ? "&#10084;" : "&#128155;";
+   const hearts = [
+    "&#10084;",   
+    "&#129293;",  
+    "&#128155;"   
+];
 
+heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
     heart.style.left=Math.random()*100+"vw";
 
-    heart.style.animationDuration=(4+Math.random()*4)+"s";
+    heart.style.fontSize=(18+Math.random()*28)+"px";
 
-    heart.style.fontSize=(18+Math.random()*25)+"px";
+    heart.style.animationDuration=(5+Math.random()*4)+"s";
 
     document.body.appendChild(heart);
 
@@ -291,6 +296,8 @@ function createHeart(){
 
         heart.remove();
 
-    },8000);
+    },9000);
 
 }
+
+setInterval(createHeart,500);
