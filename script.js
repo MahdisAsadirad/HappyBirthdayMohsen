@@ -24,6 +24,7 @@ const letterText = document.getElementById("letterText");
 const finishBtn = document.getElementById("finishBtn");
 const finalScreen = document.getElementById("finalScreen");
 
+
 const fullLetter = `
 محسن عزیزم...
 
@@ -261,15 +262,6 @@ else{
     typeLetter();
 
 }
-finishBtn.onclick=function(){
-
-    letterScreen.classList.remove("active");
-
-    finalScreen.classList.add("active");
-
-    setInterval(createHeart,350);
-
-}
 
 function createHeart(){
 
@@ -277,13 +269,14 @@ function createHeart(){
 
     heart.className="heart";
 
-   const hearts = [
-    "&#10084;",   
-    "&#129293;",  
+    const hearts = [
+    "&#10084;",  
+    "&#129293;",
     "&#128155;"   
 ];
 
 heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
     heart.style.left=Math.random()*100+"vw";
 
     heart.style.fontSize=(18+Math.random()*28)+"px";
@@ -300,7 +293,7 @@ heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
 }
 
-setInterval(createHeart,500);
+
 const stars=document.getElementById("stars");
 
 for(let i=0;i<120;i++){
@@ -324,4 +317,47 @@ for(let i=0;i<120;i++){
     stars.appendChild(star);
 
 }
-alert("??? ???? ???? ??");
+finishBtn.onclick=function(){
+
+    letterScreen.classList.remove("active");
+
+    finalScreen.classList.add("active");
+
+    const colors=[
+
+        "#FFD700",
+        "#ff4d6d",
+        "#7B68EE",
+        "#00E5FF",
+        "#ffffff"
+
+    ];
+
+    for(let i=0;i<180;i++){
+
+        const c=document.createElement("div");
+
+        c.className="confetti";
+
+        c.style.left=Math.random()*100+"vw";
+
+        c.style.background=colors[Math.floor(Math.random()*colors.length)];
+
+        c.style.animationDuration=(3+Math.random()*3)+"s";
+
+        c.style.width=(6+Math.random()*8)+"px";
+
+        c.style.height=(10+Math.random()*10)+"px";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+
+            c.remove();
+
+        },7000);
+
+    }
+	
+
+}
