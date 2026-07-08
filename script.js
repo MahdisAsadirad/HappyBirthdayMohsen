@@ -301,3 +301,26 @@ heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 }
 
 setInterval(createHeart,500);
+const stars=document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"vw";
+
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDuration=(2+Math.random()*4)+"s";
+
+    star.style.animationDelay=Math.random()*5+"s";
+
+    star.style.width=(2+Math.random()*3)+"px";
+
+    star.style.height=star.style.width;
+
+    stars.appendChild(star);
+
+}
