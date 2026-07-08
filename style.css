@@ -1,0 +1,620 @@
+@font-face{
+    font-family:"Vazir";
+    src:url("Fonts/Vazirmatn-Regular.ttf");
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Vazir";
+}
+html,body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+}
+body{
+    background:#050505;
+    color:white;
+}
+#background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,
+    #403015 0%,
+    #1a1a1a 30%,
+    #050505 80%);
+    z-index:-10;
+}
+.screen{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:1.2s;
+}
+.screen.active{
+    opacity:1;
+    visibility:visible;
+}
+.centerBox{
+    width:90%;
+    max-width:900px;
+    text-align:center;
+}
+#typing{
+
+    font-size:58px;
+
+    color:#f4d06f;
+
+    line-height:2;
+
+    min-height:180px;
+
+    text-shadow:
+    0 0 10px #d4af37,
+    0 0 30px rgba(212,175,55,.35);
+
+}
+
+/*==============================
+        دکمه
+==============================*/
+
+button{
+
+    margin-top:50px;
+
+    padding:18px 65px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:linear-gradient(45deg,#D4AF37,#FFD86B);
+
+    color:#111;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+    opacity:0;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px rgba(212,175,55,.8);
+
+}
+
+/*==============================
+      صفحه رمز
+==============================*/
+
+.passwordBox{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    padding:50px;
+
+    border-radius:25px;
+
+    width:500px;
+
+    text-align:center;
+
+}
+
+.passwordBox h2{
+
+    margin-bottom:30px;
+
+    line-height:2;
+
+    color:#F4D06F;
+
+}
+
+.passwordBox input{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    border:none;
+
+    outline:none;
+
+    font-size:22px;
+
+    text-align:center;
+
+}
+
+#passwordError{
+
+    margin-top:20px;
+
+    color:#ff9090;
+
+}
+/*==============================
+      نمایش دکمه
+==============================*/
+
+#startBtn{
+
+    display:none;
+
+}
+
+
+/*==============================
+      موبایل
+==============================*/
+
+@media(max-width:768px){
+
+    #typing{
+
+        font-size:34px;
+
+        min-height:160px;
+
+        padding:20px;
+
+    }
+
+    button{
+
+        width:80%;
+
+        font-size:20px;
+
+    }
+
+    .passwordBox{
+
+        width:90%;
+
+        padding:35px;
+
+    }
+
+}
+#welcomeText{
+
+    font-size:26px;
+
+    color:#ddd;
+
+    margin-top:25px;
+
+    line-height:2;
+
+}
+/*==============================
+        GOLDEN DOORS
+==============================*/
+
+#doors{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+}
+
+.door{
+
+    position:absolute;
+
+    top:0;
+
+    width:50%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    #4b3916,
+    #d4af37,
+    #7a5c1b);
+
+    transition:1.8s ease;
+
+}
+
+#leftDoor{
+
+    left:-50%;
+
+}
+
+#rightDoor{
+
+    right:-50%;
+
+}
+
+#doors.open #leftDoor{
+
+    left:-2%;
+
+}
+
+#doors.open #rightDoor{
+
+    right:-2%;
+
+}
+
+#doors.hide #leftDoor{
+
+    left:-100%;
+
+}
+
+#doors.hide #rightDoor{
+
+    right:-100%;
+
+}
+/*=========================
+        ALBUM
+=========================*/
+
+.album{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.polaroid img{
+
+    width:100%;
+
+    height:380px;
+
+    object-fit:cover;
+
+}
+
+.caption{
+
+    margin-top:18px;
+
+    color:#222;
+
+    text-align:center;
+
+}
+
+.caption h2{
+
+    color:#222;
+
+    margin-bottom:12px;
+
+}
+
+.caption p{
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+#nextPhoto{
+
+    opacity:1;
+
+}
+
+#openLetter{
+
+    opacity:1;
+
+}
+/*=========================
+      POLAROID DETAILS
+=========================*/
+
+.polaroid{
+	background:white;
+
+    padding:18px 18px 65px;
+
+    border-radius:8px;
+
+    width:360px;
+
+    transform:rotate(-2deg);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+    position:relative;
+    transition:0.6s;
+}
+
+.polaroid:hover{
+    transform:rotate(0deg) scale(1.03);
+}
+
+.polaroid::before{
+
+    content:"";
+
+    width:120px;
+    height:28px;
+
+    background:rgba(255,248,220,.75);
+
+    position:absolute;
+
+    top:-14px;
+    left:50%;
+
+    transform:translateX(-50%) rotate(-5deg);
+
+    border-radius:4px;
+
+}
+.fadeOut{
+
+    animation:fadeOut .35s forwards;
+
+}
+
+.fadeIn{
+
+    animation:fadeIn .45s forwards;
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+/*==============================
+          LETTER
+==============================*/
+
+.letterContainer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+#envelope{
+
+    width:240px;
+
+    height:170px;
+
+    background:#d7b36a;
+
+    border-radius:8px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:80px;
+
+    box-shadow:0 0 40px rgba(212,175,55,.35);
+
+    transition:.5s;
+
+}
+
+#envelope:hover{
+    transform:scale(1.05);
+
+}
+#letterPaper{
+
+    display:none;
+
+    width:85%;
+    max-width:700px;
+
+    background:#fffdf7;
+
+    color:#333;
+
+    padding:40px;
+
+    border-radius:12px;
+
+    line-height:2.4;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+#letterPaper h2{
+
+    color:#b8860b;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+#letterText{
+
+    white-space:pre-line;
+
+}
+#letterScreen .letterContainer{
+    justify-content:center;
+    align-items:center;
+}
+
+#letterScreen #openLetter{
+
+    display:block;
+
+    opacity:1;
+
+    position:relative;
+
+    margin-top:20px;
+
+}
+#finishBtn{
+
+    display:none;
+
+    opacity:1;
+
+    margin-top:30px;
+
+}
+#finalTitle{
+
+    color:#f4d06f;
+
+    font-size:60px;
+
+    margin-bottom:40px;
+
+    text-shadow:0 0 20px rgba(212,175,55,.6);
+
+}
+
+#finalText{
+
+    font-size:28px;
+
+    line-height:2.4;
+
+    color:#fff;
+
+}
+
+@media(max-width:768px){
+
+    #finalTitle{
+
+        font-size:38px;
+
+    }
+
+    #finalText{
+
+        font-size:20px;
+
+    }
+
+}
+.heart{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:28px;
+
+    animation:heartFall linear forwards;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+@keyframes heartFall{
+
+    from{
+
+        transform:translateY(-50px) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>برای محسن ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<!-- درهای طلایی -->
+<div id="doors">
+
+    <div id="leftDoor" class="door"></div>
+
+    <div id="rightDoor" class="door"></div>
+
+</div>
+    <!-- پس زمینه -->
+    <div id="background"></div>
+
+    <!-- ستاره ها -->
+    <div id="stars"></div>
+
+    <!-- ذرات نور -->
+    <div id="particles"></div>
+
+    <!-- قلب های شناور -->
+    <div id="hearts"></div>
+
+    <!-- موزیک -->
+    <audio id="bgMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- کل برنامه -->
+    <main id="app">
+
+        <!-- صفحه اول -->
+        <section id="intro" class="screen active">
+
+            <div class="centerBox">
+
+                <h1 id="typing"></h1>
+
+                <button id="startBtn" onclick="goToPassword()">
+    شروع سفر
+</button>
+
+            </div>
+
+        </section>
+
+        <!-- صفحه رمز -->
+        <section id="passwordScreen" class="screen">
+
+            <div class="passwordBox">
+
+                <h2>
+
+                    فقط صاحب این هدیه
+                    <br>
+                    می‌تونه واردش بشه...
+
+                </h2>
+
+                <input
+                    id="passwordInput"
+                    type="password"
+                    maxlength="4"
+                    placeholder="رمز را وارد کن">
+
+                <button id="checkPassword">
+
+                    ورود
+
+                </button>
+
+                <p id="passwordError"></p>
+
+            </div>
+
+        </section>
+
+		<!-- صفحه بعد از رمز -->
+
+<section id="welcomeScreen" class="screen">
+
+    <div class="centerBox">
+
+        <h1>تولدت مبارک محسنم ❤️</h1>
+
+        <p id="welcomeText">
+
+            این تازه اول سفره...
+
+        </p>
+
+    </div>
+
+</section>
+		<!-- صفحه آلبوم -->
+
+<section id="albumScreen" class="screen">
+
+    <div class="album">
+
+        <div class="polaroid">
+
+            <img id="albumImage" src="images/1.jpg">
+
+            <div class="caption">
+
+                <h2 id="photoTitle">
+                    اولین قرار
+                </h2>
+
+                <p id="photoText">
+
+                    بعضی روزها فقط توی تقویم ثبت میشن...
+                    اما بعضی روزها مسیر زندگی آدم رو عوض می‌کنن...
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <button id="nextPhoto">
+            ادامه خاطره ✨
+        </button>
+
+    </div>
+
+</section>
+		
+		<!-- صفحه نامه -->
+
+<section id="letterScreen" class="screen">
+
+    <div class="letterContainer">
+
+        <div id="envelope">
+
+            <div class="envelopeFront">
+                ✉️
+            </div>
+
+        </div>
+
+        <div id="letterPaper">
+
+            <h2>برای محسنی نازم ❤️</h2>
+
+            <p id="letterText"></p>
+
+        </div>
+
+        <button id="openLetter">
+            باز کردن نامه ❤️
+        </button>
+		<button id="finishBtn">
+    آخرش هم یه چیز کوچیک مونده... ❤️
+</button>
+
+    </div>
+	
+
+</section>
+        <!-- صفحه پایان -->
+
+<section id="finalScreen" class="screen">
+
+    <div class="centerBox">
+
+        <h1 id="finalTitle">
+            تولدت مبارک عشق من ❤️
+        </h1>
+
+        <p id="finalText">
+
+            امیدوارم تمام آرزوهات یکی‌یکی برآورده بشن...
+            <br><br>
+
+            ممنونم که نزدیک دو سال کنارم بودی...
+            <br><br>
+
+            دوستت دارم،
+            <br>
+            مهدیس ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
